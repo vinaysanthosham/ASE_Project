@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nearest Medical Stores
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+
+  <ion-item>
+    <ion-label floating>Where?</ion-label>
+    <ion-input type="text" #location></ion-input>
+  </ion-item>
+</ion-list>
+    <button block ion-button (click)="getNearestMedicalStores()" round>Get Nearest Medical Stores</button>
+  <ion-list *ngFor="let venue of data">
+      <ion-card>
+          <ion-card-content>
+            <ion-card-title>
+                {{venue.name}}
+            </ion-card-title>
+              <p>
+              {{venue.contact.formattedPhone}}<br>
+                  {{venue.location.address}}
+              </p>
+          </ion-card-content>
+      </ion-card>
+  </ion-list>
+</ion-content>
