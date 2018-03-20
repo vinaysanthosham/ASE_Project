@@ -1,6 +1,8 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import {MainPage} from '../main/main';
+import {RegisterPage} from "../register/register";
+import {MenuPage} from "../menu/menu";
 /**
  * Generated class for the LoginPage page.
  *
@@ -17,7 +19,7 @@ export class LoginPage {
 
     @ViewChild('username') user;
     @ViewChild('password') password;
-    
+
   constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
   }
 
@@ -25,9 +27,9 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   signInUser(){
-    
+
     if(this.user.value == "mavericks" && this.password.value == "mavericks"){
-                 this.navCtrl.push(MainPage);    
+                 this.navCtrl.push(MenuPage);
     }else{
          let alert = this.alertCtrl.create({
           title: 'Login unsuccessful!',
@@ -37,6 +39,9 @@ export class LoginPage {
         alert.present();
     }
     console.log(this.user.value,this.password.value);
+  }
+  register(){
+    this.navCtrl.push(RegisterPage);
   }
 
 }
