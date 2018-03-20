@@ -42,8 +42,6 @@ export class RegisterPage {
         });
         alert.present();
     }
-     
-  
     console.log(this.user.value,this.password.value);
   }
 
