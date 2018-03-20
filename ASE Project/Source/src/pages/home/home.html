@@ -1,19 +1,17 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Smart Health
+      Ionic Vision
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <div class="row">
-        <div class="col">
-              <button block ion-button (click)="signIn()" round>LOGIN</button>
-        </div>
-        <div class="col">
-              <button block ion-button (click)="register()" round> REGISTER</button>
-        </div>
-    </div>
- 
+  <ion-card>
+    <img [src]="imageResult" alt="ion_vision" height="300">
+  </ion-card>
+          <p>{{ visionResult.detectionConfidence }}</p>
+  <ion-fab right bottom>
+      <button ion-fab color="danger" (click)="capture()"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+  </ion-fab>
 </ion-content>
