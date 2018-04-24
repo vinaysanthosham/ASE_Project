@@ -14,6 +14,8 @@ import {LoginPage} from '../pages/login/login';
 import {RegisterPage} from '../pages/register/register';
 import {MainPage} from '../pages/main/main';
 import {MenuPage} from '../pages/menu/menu';
+import {DrugslistPage} from '../pages/drugslist/drugslist';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MenuPage} from '../pages/menu/menu';
     LoginPage,
     RegisterPage,
     MainPage,
-    MenuPage
+    MenuPage,
+    DrugslistPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {MenuPage} from '../pages/menu/menu';
     LoginPage,
     RegisterPage,
     MainPage,
-    MenuPage
+    MenuPage,
+    DrugslistPage
   ],
   providers: [
     StatusBar,

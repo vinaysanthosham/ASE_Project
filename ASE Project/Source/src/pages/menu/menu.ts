@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {MainPage} from "../main/main";
 import {HomePage} from "../home/home";
+import {DrugslistPage} from "../drugslist/drugslist";
 
 /**
  * Generated class for the MenuPage page.
@@ -28,7 +29,9 @@ export class MenuPage {
   }
   textdetection(){
     this.navCtrl.push(HomePage);
-
+  }
+  drugslist(){
+    this.navCtrl.push(DrugslistPage);
   }
 
 }
