@@ -9,6 +9,7 @@ import { AlertController,LoadingController,ToastController } from 'ionic-angular
 })
 export class HomePage {
 
+
   public ROOT_URL = 'https://vision.googleapis.com';
   public API_KEY = 'AIzaSyDCeSjtkgELutZ4prPZBCjKPvw7RIQF3V8'; // YOUR CLOUD PLATFORM API KEY
   public visionRequest = {
@@ -26,6 +27,8 @@ export class HomePage {
     detectionConfidence: null
   };
   public imageResult = 'https://i.imgur.com/hyRulHk.gif';
+
+  public sideeffectsdata;
 
   constructor(
     public http: HttpClient,
@@ -59,12 +62,22 @@ export class HomePage {
         var length = data.responses[0].textAnnotations.length;
         var result = data.responses[0].textAnnotations[0].description;
         this.visionResult.detectionConfidence = result;
+      
        /*let alert = this.alertCtrl.create({
           title: 'Ionic Vision',
           subTitle: data.responses[0].textAnnotations,
           buttons: ['OK']
         });
         alert.present();*/
+
+        this.http.get('https://api.fda.gov/drug/event.json?api_key=1ynHtj6cjqyH3G8V2wK4xOJH07hgZvik1RYirw4I&search='+this.visionResult.detectionConfidence+'&limit=5').subscribe((sideeffects:any) => {  
+          let sed = [];
+          for (var _i = 0; _i < sideeffects.results.length; _i++) {
+            sed.push(sideeffects.results[_i].patient.reaction[0].reactionmeddrapt);
+          }
+          this.sideeffectsdata = sed;
+        });
+
       }, (err) => {
         loader.dismiss(); // hide loading component
         this.reset();

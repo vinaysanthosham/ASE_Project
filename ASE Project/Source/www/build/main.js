@@ -31,10 +31,103 @@ var DrugslistPage = (function () {
     }
     DrugslistPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DrugslistPage');
+        var dl = [
+            "abilify",
+            "acyclovir",
+            "advil",
+            "albuterol",
+            "alli diet",
+            "allopurinol",
+            "amoxicillin",
+            "amoxil",
+            "ampicillin",
+            "antabuse",
+            "arimidex",
+            "atenolol",
+            "augmentin",
+            "avana",
+            "avanafil",
+            "avodart",
+            "aygestin",
+            "baclofen",
+            "benicar",
+            "bupropion",
+            "buspar",
+            "cafergot",
+            "celebrex",
+            "celexa",
+            "cephalexin",
+            "chlorthalidone",
+            "cialis",
+            "cipro",
+            "cleocin",
+            "clindamycin",
+            "clomid",
+            "clonidine",
+            "cymbalta",
+            "diclofenac",
+            "effexor",
+            "elimite",
+            "esomeprazole",
+            "flagyl",
+            "fluconazole",
+            "fourosimide",
+            "hydrochlorothiazide",
+            "inderal",
+            "indocin",
+            "indomethacin",
+            "keflex",
+            "lasix",
+            "levitra",
+            "lexapro",
+            "lipitor",
+            "lisinopril",
+            "medrol",
+            "methotrexate",
+            "minoxidil",
+            "motilium",
+            "motrin",
+            "neurontin",
+            "nexium",
+            "nolvadex",
+            "permethrin",
+            "prednisolone",
+            "prednisone",
+            "proscar",
+            "provera",
+            "prozac",
+            "retin-a",
+            "rimonabant",
+            "robaxin",
+            "rogaine",
+            "seroquel",
+            "sildenafil",
+            "strattera",
+            "stromectol",
+            "suhagra",
+            "synthroid",
+            "tadacip",
+            "tadalafil",
+            "tamoxifen",
+            "tenormin",
+            "toradol",
+            "trazodone",
+            "tretinoin",
+            "triamterene",
+            "vermox",
+            "viagra",
+            "vigara",
+            "wellbutrin",
+            "yasmin",
+            "zithromax",
+            "zofran",
+            "zoloft"
+        ];
+        this.drugslist = dl;
     };
     DrugslistPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-drugslist',template:/*ion-inline-start:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\drugslist\drugslist.html"*/'<!--\n  Generated template for the DrugslistPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>drugslist</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding>\n  <div class = "list list-inset">\n    <div class = "item"><ion-icon name="contrast"></ion-icon>abilify</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>acyclovir</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>advil</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>albuterol</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>alli diet</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>allopurinol</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>amoxicillin</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>amoxil</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>ampicillin</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>antabuse</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>arimidex</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>atenolol</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>augmentin</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>avana</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>avanafil</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>avodart</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>aygestin</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>baclofen</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>benicar</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>bupropion</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>buspar</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>cafergot</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>celebrex</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>celexa</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>cephalexin</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>chlorthalidone</div>\n    <div class = "item"><ion-icon name="contrast"></ion-icon>cialis</div>\n </div> \n</ion-content>\n'/*ion-inline-end:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\drugslist\drugslist.html"*/,
+            selector: 'page-drugslist',template:/*ion-inline-start:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\drugslist\drugslist.html"*/'<!--\n  Generated template for the DrugslistPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>drugslist</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n<ion-content padding>\n\n  <!--<p>{{drugslist}}</p>-->\n  \n  <ion-item *ngFor="let item of drugslist;">\n      <ion-icon name="contrast"></ion-icon> {{item}} \n  </ion-item>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\drugslist\drugslist.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], DrugslistPage);
@@ -478,6 +571,13 @@ var HomePage = (function () {
                    buttons: ['OK']
                  });
                  alert.present();*/
+                _this.http.get('https://api.fda.gov/drug/event.json?api_key=1ynHtj6cjqyH3G8V2wK4xOJH07hgZvik1RYirw4I&search=' + _this.visionResult.detectionConfidence + '&limit=5').subscribe(function (sideeffects) {
+                    var sed = [];
+                    for (var _i = 0; _i < sideeffects.results.length; _i++) {
+                        sed.push(sideeffects.results[_i].patient.reaction[0].reactionmeddrapt);
+                    }
+                    _this.sideeffectsdata = sed;
+                });
             }, function (err) {
                 loader.dismiss(); // hide loading component
                 _this.reset();
@@ -514,7 +614,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Ionic Vision\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <img [src]="imageResult" alt="ion_vision" height="300">\n  </ion-card>\n          <p>{{ visionResult.detectionConfidence }}</p>\n          <button ion-button>Get the side effects of the drug</button>\n          <div class = "list list-inset">\n            <div class = "item"><ion-icon name="contrast"></ion-icon>Weight Increased</div>\n            <div class = "item"><ion-icon name="contrast"></ion-icon>Chronic obstructive pulmonary disease</div>\n            <div class = "item"><ion-icon name="contrast"></ion-icon>Diarrhoea</div>\n            <div class = "item"><ion-icon name="contrast"></ion-icon>Dyspnoea</div>\n            <div class = "item"><ion-icon name="contrast"></ion-icon>Fatigue</div>\n         </div>     \n  <ion-fab right bottom>\n      <button ion-fab color="danger" (click)="capture()"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>\n      Ionic Vision\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <img [src]="imageResult" alt="ion_vision" height="300">\n  </ion-card>\n      <p>{{ visionResult.detectionConfidence }}</p>\n        <button ion-button>Get the side effects of the drug</button>\n        <ion-item *ngFor="let item of sideeffectsdata;">\n        {{item}} \n        </ion-item>\n  \n  <ion-fab right bottom>\n      <button ion-fab color="danger" (click)="capture()"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>\n  </ion-fab>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Sirisha Sunkara\Desktop\Spring18\ASE\Project\SmartHealth\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */],
